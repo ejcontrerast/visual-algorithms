@@ -8,7 +8,7 @@ Feel free to explore the implementations and design proposals shared here.
 
 ## General Design Principles
 
-* Font Design: will be use Poppins for Redability
+* Font Design: will be use [Poppins](https://fonts.google.com/specimen/Poppins?query=Poppins) for Redability
 * Colors: First will be dark mode then will be the implementation of the light mode.
 * Responsive: Fully functional on desktops, tablets, and mobile devices.
 * Consistency for reusable style.
@@ -35,6 +35,15 @@ Feel free to explore the implementations and design proposals shared here.
 * Tooltips: On hover, provide brief explanations for UI elements.
 * Breadcrumbs: Show navigation hierarchy for better orientation.
 * Custom Controls: Allow users to adjust parameters dynamically (e.g., array size for sorting algorithms).
+
+## Resources
+* [Tailwind UI](https://tailwindui.com/components/preview#component-70a9bdf83ef2c8568c5cddf6c39c2331): Pre-designed components to kickstart your project.
+* [Framer Motion](https://motion.dev/docs/react-quick-start): For advanced animations.
+
+### Other web Pages with the same concept
+* [VisuAlgo](https://visualgo.net/en): Great for understanding how algorithm visualization can be designed.
+* [Algorithm Visualizer](https://algorithm-visualizer.org/): Open-source project showcasing algorithms.
+* [Pathfinding Visualizer](https://pathfindout.com/): A clean and functional implementation of pathfinding algorithms.
 
   
 
