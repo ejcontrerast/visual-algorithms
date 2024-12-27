@@ -1,32 +1,61 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { bubbleSort } from '../algorithms/sorting/bubbleSort';
 
-interface VisualizationCanvasProps {
-    data: number[];
-}
+const Visualizer: React.FC = () => {
+  const [array, setArray] = useState<number[]>([]);
+  const [sorting, setSorting] = useState(false);
 
-const VisualizationCanvas: React.FC<VisualizationCanvasProps> = ({ data }) => {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
+  // Generate a random array
+  const generateArray = () => {
+    const newArray = Array.from({ length: 10 }, () =>
+      Math.floor(Math.random() * 100)
+    );
+    setArray(newArray);
+  };
 
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+  // Start Bubble Sort
+  const startSorting = async () => {
+    setSorting(true);
+    await bubbleSort(array, setArray, 500); // 500ms delay
+    setSorting(false);
+  };
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+  useEffect(() => {
+    generateArray();
+  }, []);
 
-        const barWidth = 20;
-        const spacing = 5;
-        const startX = 10;
-        const maxHeight = canvas.height - 20;
-        data.forEach((value, index) => {
-            const barHeight = (value / Math.max(...data)) * maxHeight;
-            ctx.fillStyle = 'blue';
-            ctx.fillRect(startX + index * (barWidth + spacing), canvas.height - barHeight - 10, barWidth, barHeight);
-        });
-    }, [data]); // Re-render when data changes
-
-    return <canvas ref={canvasRef} width={500} height={300} className="border border-gray-300"></canvas>;
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold text-center mb-4">Bubble Sort Visualizer</h1>
+      <div className="flex justify-center mb-4">
+        {array.map((value, index) => (
+          <div
+            key={index}
+            style={{ height: `${value * 3}px` }}
+            className="bg-blue-500 w-8 mx-1 text-center text-white"
+          >
+            {value}
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center gap-4">
+        <button
+          onClick={generateArray}
+          disabled={sorting}
+          className="px-4 py-2 bg-green-500 text-white rounded"
+        >
+          Generate New Array
+        </button>
+        <button
+          onClick={startSorting}
+          disabled={sorting}
+          className="px-4 py-2 bg-blue-500 text-white rounded"
+        >
+          Start Sorting
+        </button>
+      </div>
+    </div>
+  );
 };
 
-export default VisualizationCanvas;
+export default Visualizer;

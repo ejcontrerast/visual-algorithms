@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# Project on Course
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a personal project developed during my spare time, where I document and showcase the visualisation and of various coding algorithms. The repository serves as a practical demonstration of algorithm implementations, providing insights into their development and functionality.
 
-Currently, two official plugins are available:
+Additionally, this space will feature design concepts and ideas, offering a comprehensive view of both the technical and visual aspects of the project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Feel free to explore the implementations and design proposals shared here.
 
-## Expanding the ESLint configuration
+## General Design Principles
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+* Font Design: will be use Poppins for Redability
+* Colors: First will be dark mode then will be the implementation of the light mode.
+* Responsive: Fully functional on desktops, tablets, and mobile devices.
+* Consistency for reusable style.
 
-- Configure the top-level `parserOptions` property like this:
+## Color Pallete for Dark Mode:
+* Background: bg-gray-900
+* Primary text: text-gray-100
+* Accent: text-teal-400 or text-indigo-500
+* Buttons: bg-indigo-600 hover:bg-indigo-500
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Algorithm Page
+* Sidebar Navigation
+  * Fixed, collapsible side bar with a list of algorithms.
+* Main Content
+  * Algorithm title and short description.
+  * Big O notation
+  * Pseudocode in python and JavaScript with real-world examples.
+  * Interactive Canvas
+    * Area with the visualization with animation controls. Just basic at first: Play and reset
+  * Algorithms variants DFS and BFS for the future implementation
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Possile ideas
+* Progressive Visualizations: As the algorithm runs, animate each step with visual feedback (e.g., highlighted nodes in graphs).
+* Tooltips: On hover, provide brief explanations for UI elements.
+* Breadcrumbs: Show navigation hierarchy for better orientation.
+* Custom Controls: Allow users to adjust parameters dynamically (e.g., array size for sorting algorithms).
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+  
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+

@@ -1,20 +1,17 @@
-import { useState } from 'react'
-import { bubbleSort } from './algorithms/sorting/bubbleSort'
-import VisualizationCanvas from './components/VisualizationCanvas';
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import Visualizer from './components/VisualizationCanvas';
 
-function App() {
-  const [data, setData] = useState([5, 2, 8, 1, 9, 4]);
-
-  const handleStartSort = () => {
-      bubbleSort(data, setData);
-  }
+const App: React.FC = () => {
   return (
-      <div>
-          <VisualizationCanvas data={data} />
-          <button onClick={handleStartSort}>Start Sort</button>
-      </div>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/bubble-sort" element={<Visualizer />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
