@@ -25,6 +25,7 @@ const Visualizer: React.FC = () => {
   }, []);
 
   return (
+  <div className='flex flex-col items-center justify-center h-screen w-screen'>
     <div className="p-4">
       <h1 className="text-2xl font-bold text-center mb-4">Bubble Sort Visualizer</h1>
       <div className="flex justify-center mb-4">
@@ -54,6 +55,7 @@ const Visualizer: React.FC = () => {
           Start Sorting
         </button>
       </div>
+    </div>
     </div>
   );
 };
